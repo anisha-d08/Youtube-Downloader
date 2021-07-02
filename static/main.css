@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+:root{
+    --dark : #171717;
+    --dark-2: #444444;
+    --accent: #DA0037;
+    --light: #EDEDED;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    /*font-family: 'Varela Round', sans-serif;*/
+    font-family: 'Abel', sans-serif;
+}
+body{
+    height: 100%;
+}
+h1{font-size: 26px;}
+h2{font-size: 22px;}
+h3{font-size: 20px;}
+h4{font-size: 16px;}
+h5{font-size: 12px;}
+h6{font-size: 10px;}
+p, a{
+    font-size: 20px;
+}
+
+li, a, button{
+    list-style-type: none;
+    text-decoration: none;
+}
+a{
+    color: var(--dark);
+}
+a:hover{
+    color: var(--accent);
+}
+input{
+    border: transparent;
+}
+img{
+    max-width: 100%;
+}
+
+.fas, .fab{
+    color: var(--accent);
+}
+
+.content-wrapper{
+    position: relative;
+    min-height: 98vh;
+}
+.inner-cwrapper{
+    padding-bottom: 30px;
+}
+
+
+.nav-menu{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+}
+.nav-menu div a{
+    display: block;
+}   
+.nav-menu .toggle{
+    order: 1;
+
+}
+.nav-menu .item {
+    order: 2;
+    width: 100%;
+    padding: 1em;
+    margin-top: 1em;
+    border: 0.5px solid #c4c4c4;
+    border-radius: 4px;
+    text-align: center;
+    display: none;
+}
+.active .item{
+    display: block;
+}
+
+.form-group{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    height: 12em;
+}
+.form-label{
+    margin: 0.5em;
+}
+.form-input{
+    margin: 0.5em;
+}
+.input-box{
+    width: 200px;
+    padding: 5px;
+    border: 2px solid var(--accent);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.content{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+.content>*{
+    flex: 1 100%;
+    border-radius: 4px;
+    margin: 10px;
+    padding: 10px;
+}
+.about{
+    display: block;
+    padding: 40px;
+    margin: 10px 10px 10px 10px;
+    border-radius: 4px;
+}
+.about .steps{
+    padding: 0.5em 0em 0em 1em;
+}
+.thumbnail{
+    align-self: center;
+}
+.other-info{
+    display: flex;
+    flex-direction: column;
+}
+.vid-title, .vid-details, .download-opt{
+    margin: 0.5em;
+    padding: 0.5em;
+}
+.download-opt{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-top: 1.5px solid #969696;
+}
+.download-opt>*{
+    margin: 0.7em;
+}
+.download-btn{
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+}
+.btn{
+    color: var(--light);
+    width: 5em;
+    height: 2.2em;
+    padding: 2px 5px 2px 5px;
+    background-color: var(--accent);
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+}
+input.link-btn {
+    color: var(--light) !important;
+    padding: 0.5em 1em 0.5em 1em;
+    margin: 0 1.5em 0 1.5em ;
+    background-color: var(--dark);
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+    input.link-btn:hover{
+        background-color: var(--dark-2);
+    }
+    .btn:hover{
+        background-color: #93eeb6;
+    }
+
+.download-btn form .temporary{
+    display: none;
+}
+
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+}
+
+    @media screen and (min-width: 732px){
+        h1{font-size: 28px;}
+        h2{font-size: 24px;}
+        h3{font-size: 22px;}
+        h4{font-size: 18px;}
+        h5{font-size: 14px;}
+        h6{font-size: 12px;}
+
+        .about{
+            margin: 10px 500px 10px 500px;
+        }
+
+        .form-label{
+            margin: 20px 20px 10px 20px;
+        }
+        .form-input{
+            margin: 10px 20px 20px 20px;
+        }
+        .input-box{
+            width: 500px;
+            padding: 5px;
+        }
+        input.link-btn{
+            padding: 0.7em 2em 0.7em 2em;
+            font-size: 18px;
+        }
+    }
+
+    @media all and (min-width: 1200px){
+
+        h1{font-size: 30px;}
+        h2{font-size: 26px;}
+        h3{font-size: 24px;}
+        h4{font-size: 20px;}
+        h5{font-size: 16px;}
+        h6{font-size: 14px;}
+
+        nav .nav-menu{
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+        h1.brand-name{
+            order: 0;
+            flex: 12;
+        }
+        .nav-menu .item{
+            padding: 0;
+            margin-top: 0;
+            border: none;
+            text-align: center;
+            position: relative;
+            display: block; 
+            width: auto;
+            flex: 1;
+        }
+        .toggle{
+            display: none;
+        }
+
+        .about{
+            margin: 10px 500px 10px 500px;
+        }
+
+        .form-label{
+            margin: 20px 20px 10px 20px;
+        }
+        .form-input{
+            margin: 10px 20px 20px 20px;
+        }
+        .input-box{
+            width: 500px;
+            padding: 5px;
+        }
+
+
+
+        .thumbnail{
+            align-self: center;
+            order: 1;
+            flex: 1.2;
+        }
+        .other-info{
+            order: 1;
+            flex:1;
+        }
+        .vid-title, .vid-details, .download-opt{
+            margin: 1em;
+            padding: 1.7em;
+        }
+        .download-opt>*{
+            margin: 1em 1.5em 1em 1.5em;
+        }
+        input.link-btn {
+            padding: 1em 2.5em 1em 2.2em;
+        }
+
+
+        .something{
+            order: 2;
+        }
+
+    }
+    

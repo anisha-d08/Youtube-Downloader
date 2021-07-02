@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CSS File link-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <!--Font Awesome icons CDN link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!--Webpage tab icon-->
+    <link rel="icon" href="{{ url_for('static', filename='record.png') }}" type="image/icon type">
+    <title>DownTube | Youtube Downloader</title>
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="inner-cwrapper">
+    
+    <nav class="nav-wrapper">
+        <div class="nav-menu">
+            <h1 class="brand-name"><a href="{{ url_for('main') }}"><img src="{{ url_for('static', filename='logo.png') }}" alt="DownTube"></a></h1>
+            <div class="item item1"><a href="{{ url_for('main') }}">About</a></div>
+            <div class="item item2"><a href="{{ url_for('feedback') }}">Feedback</a></div>
+            <div class="toggle"><a href="#"><i class="fas fa-bars"></i></a></div>
+        </div>
+    </nav>
+    
+    <div class="link-input">
+        <form method="POST" action="{{ url_for('download') }}">
+            <div class="form-group">
+                <div class="form-label">
+                    <h2>Enter the YouTube Video link</h2>
+                </div>
+                <div class="form-input">
+                    <input class="input-box" type="text" name="vid_url">
+                    <input class="submit-btn btn" type="submit" value="Go">
+                </div>
+                
+            </div>        
+        </form>
+    </div>
+
+    {% block content %}
+    {% endblock content %}
+
+        </div>
+
+    <footer class="footer">
+        <div class="copyright">
+            <small>Copyright &copy; Ohni-yon</small>
+        </div> 
+    </footer>
+
+    </div>
+    <script>
+        const toggle = document.querySelector(".toggle");
+        const menu = document.querySelector(".nav-menu");
+        const items = document.querySelectorAll(".item");
+        function toggleMenu() {
+            if (menu.classList.contains("active")) {
+                menu.classList.remove("active");
+                toggle.querySelector("a").innerHTML = "<i class='fas fa-bars'></i>";
+            } else {
+                menu.classList.add("active");
+                toggle.querySelector("a").innerHTML = "<i class='fas fa-times'></i>";
+            }
+        }
+        toggle.addEventListener("click", toggleMenu, false);
+    </script>
+
+</body>
+</html>

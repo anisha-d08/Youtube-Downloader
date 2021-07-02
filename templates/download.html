@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="content">
+        <div class="thumbnail">
+            <img src="{{ yt.thumbnail_url }}" alt="Video Thumbnail" class="thmbnail-img">
+        </div>
+
+        <div class="other-info">
+            <div class="vid-title">
+                <h2>{{ yt.title }}</h2>
+            </div>
+
+            <div class="vid-details">
+                <p>Length of the video --- {{ yt.length }}</p>
+                <p>Views on video --- {{ yt.views }}</p>
+            </div>
+                
+            <div class="download-opt">
+                <h5>Download video (.mp4)</h5>
+                <div class="download-btn">
+                    {% for resolution in video_streams %}
+                        <form action="{{ url_for('vid_download') }}" method="post">
+                            <input class="link-btn" type="submit" name="res" value="{{ resolution.resolution }}">
+                            <input type="text" class="temporary" name="l" value="{{ link }}">
+                        </form>
+                    {% endfor %}
+                </div>
+                
+                <h5>Download audio (.mp3)</h5>
+                <div class="download-btn">
+                    {% for abr in audio_streams %}
+                        <form action="{{ url_for('aud_download') }}" method="post">
+                            <input class="link-btn" type="submit" name="a" value="{{ abr.abr }}">
+                            <input type="text" class="temporary" name="l" value="{{ link }}">
+                        </form>
+                    {% endfor %}
+                </div>
+            </div>
+        </div> 
+ 
+    </div>
+    
+{% endblock content %}
+
+    
